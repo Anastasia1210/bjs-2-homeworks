@@ -29,13 +29,12 @@ let arrOfArr = [[1, 2, 3], [4, 5, 6]];
 function worker(arr) {
 
   let sum = 0;
+
     for (i=0; i < arr.length; i++) {
       sum += arr[i];
     }
-    return sum;
-  }
-
-  worker([1,2,3]);
+  return sum;
+}
 
 function makeWork(arrOfArr, worker) {
 
@@ -43,12 +42,14 @@ function makeWork(arrOfArr, worker) {
 
   for (i=0; i < arrOfArr.length; i++) {
 
-    worker(arrOfArr[i]);
+    let sum = worker(arrOfArr[i]);
 
     if (sum > max){
       max = sum;
     }
-  }
 
+  }
   return max
 }
+
+makeWork(arrOfArr);
