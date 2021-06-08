@@ -24,6 +24,7 @@ function getArrayParams(arr) {
 getArrayParams([1, 2, 3, -100, 10]);
 
 // Задание 2
+
 let arrOfArr = [[1, 2, 3], [4, 5, 6]];
 
 function worker(arr) {
@@ -38,18 +39,18 @@ function worker(arr) {
 
 function makeWork(arrOfArr, worker) {
 
-  let max;
+  let max = Number.MIN_SAFE_INTEGER;
 
   for (i=0; i < arrOfArr.length; i++) {
 
     let sum = worker(arrOfArr[i]);
-
     if (sum > max){
       max = sum;
     }
-
+    
   }
-  return max
+  return max;
 }
 
-makeWork(arrOfArr);
+makeWork(arrOfArr, worker);
+
