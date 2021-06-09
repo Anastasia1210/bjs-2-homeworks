@@ -31,7 +31,7 @@ function worker(arr) {
 
   let sum = 0;
 
-    for (i=0; i < arr.length; i++) {
+    for (let i=0; i < arr.length; i++) {
       sum += arr[i];
     }
   return sum;
@@ -41,7 +41,7 @@ function makeWork(arrOfArr, worker) {
 
   let max = Number.MIN_SAFE_INTEGER;
 
-  for (i=0; i < arrOfArr.length; i++) {
+  for (let i=0; i < arrOfArr.length; i++) {
 
     let sum = worker(arrOfArr[i]);
     if (sum > max){
