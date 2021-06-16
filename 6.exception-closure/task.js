@@ -1,20 +1,19 @@
 function parseCount(data) {
-    let a = Number.parseInt(data);
-    if (isNaN(a) === true) {
-        throw ("Невалидное значение");
-    } else {
-        return a;
-    }
+    let newData = Number.parseInt(data);
+    if (isNaN(newData)){ 
+      const parseError = new Error("Невалидное значение");
+      throw parseError;
+    };
+    return newData;
 }
- 
-function validateCount(data) {
+
+function validateCount(data2) {
      
   try { 
-      parseCount(data);
-      return parseCount(data);
-      } catch {
-         return "Невалидное значение";
-     }
+      return parseCount(data2);
+      } catch (e){
+        return e;
+        }
 }
 
 // Task 2
@@ -24,28 +23,32 @@ class Triangle{
         this.a = a;
         this.b = b;
         this.c = c;
-        if ((a+b) < c || (a+c) < b || (b+c) < a) 
-        throw "Треугольник с такими сторонами несуществует";
+        if ((this.a+this.b) < this.c || (this.a+this.c) < this.b || (this.b+this.c) < this.a) 
+        throw new Error ("Треугольник с такими сторонами несуществует");
     }
 
     getPerimeter() {
-       return perimeter = this.a+this.b+this.c;
+      return this.a + this.b + this.c;
     }
 
     getArea() {
-       let p = getPerimeter();
-       return Area = Math.sqrt(p (p - a)(p -b)(p -c)).toFixed(3);
-
+       let p = (this.getPerimeter() / 2);
+       let area = Math.sqrt(p (p - this.a)(p -this.b)(p -this.c)).toFixed(3);
+       let area1 = Number(area);
+       return area1;
     }
 }
 
-function getTriangle (d, e, f) {
-    let triangle1 = new Triangle(d, e, f);
+function getTriangle (sideD, sideE, sideF) {
     
     try {
-        return triangle1;
-    } catch {
-        return ${triangle1.getArea()} + ${triangle1.getPerimenter()}; 
+        return new Triangle(sideD, sideE, sideF);
+    } catch (e){
+        let errorArr = {
+            perimeter: triangle1.getPerimeter(),
+            area: triangle1.getArea(),
+        }
+        return errorArr(); 
     }
 }
 
