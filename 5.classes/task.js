@@ -74,25 +74,23 @@ class DetectiveBook extends Book {
           } 
       }
       findBookBy (type, value) {
+        
         for (let i = 0; i < this.books.length; i++) {
-          if (this.books[i] === type && this.books[i] === value){
+          if (this.books[i][type] === value){
             return (this.books[i]); 
-          } else {
-            return (null);
-          }
+          } 
         }
+        return (null);
       }
       giveBookByName (bookName) {
-        for (let i = 0; i , this.books.length; i++) {
-           if(bookName === this.name) {
-           delete this.name;
-           return (this.name);
-          } else {
-            return (null);
-          }
-        }
+        for (var i in this.books) {
+           if(this.books[i] === bookName) {
+           delete this.books[i];
+           return this.books[i].name;
+          } 
+      }
+        return (null);
       }
   }
 
 
-  
