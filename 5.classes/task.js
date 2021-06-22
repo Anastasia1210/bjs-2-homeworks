@@ -84,11 +84,11 @@ class DetectiveBook extends Book {
       }
       giveBookByName (bookName) {
         for (var i in this.books) {
-           if(this.books[i] === bookName) {
-           delete this.books[i];
-           return this.books[i].name;
+           if(this.books[i].name === bookName) {
+           this.books.splice(i , 1);
+           return this.books[i];
           } 
-      }
+        }
         return (null);
       }
   }
