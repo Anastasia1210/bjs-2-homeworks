@@ -44,10 +44,10 @@ function getTriangle (sideD, sideE, sideF) {
         return {
           getPerimeter: function() {
             return "Ошибка! Треугольник не существует";
-          };
+          },
           getArea: function() {
             return "Ошибка! Треугольник не существует";         
-          };
+          }
         }
       }
     }
