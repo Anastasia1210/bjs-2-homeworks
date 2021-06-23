@@ -85,8 +85,9 @@ class DetectiveBook extends Book {
       giveBookByName (bookName) {
         for (var i in this.books) {
            if(this.books[i].name === bookName) {
-           this.books.splice(i , 1);
-           return this.books[i];
+             let key = this.books[i]; 
+             this.books.splice(i , 1);
+           return key;
           } 
         }
         return (null);
